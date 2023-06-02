@@ -38,6 +38,7 @@ const p = {
   name: "ji",
   age: 20,
   check: true,
+  "name hello": false,
 };
 console.log(p.age); //2
 console.log(p["check"]); //true
