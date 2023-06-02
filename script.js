@@ -55,3 +55,15 @@ console.log(r);
 
 //typeof
 console.log(typeof p);
+
+//array
+const s = [1, false, 3, "shsj", 5, { name: "ji", age: 20 }];
+console.log(s[7]);
+console.log(typeof s);
+console.log(s[5].name); //ji
+
+//let
+let hello = "hello";
+console.log(hello);
+hello = false;
+console.log(hello);
