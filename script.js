@@ -1,3 +1,4 @@
+//1. looping control structures
 // for
 for (let i = 0; i < 10; i = i + 10) {
   console.log(i); //0
@@ -20,3 +21,25 @@ do {
   k++; //0 1 ...10
 } while (k < 10);
 //exit controlled loop
+
+//2. jumping control structures
+
+//break
+for (let i = 0; i < 10; i++) {
+  if (i === 5) {
+    break;
+  }
+  console.log(i); //0 1 2 3 4
+}
+console.log("outside loop");
+
+//continue
+for (let i = 0; i < 10; i++) {
+  if (i === 5) {
+    continue; // skip particular condition
+  }
+  console.log(i); //0 1 2 3 4...6 7 8 9
+}
+console.log("outside loop");
+
+// return
