@@ -46,8 +46,12 @@ console.log("outside loop");
 
 // for arrays and string iteration => for...of loops
 const students = ["John", "Sara", "Jack"];
-for (let element of students) {
+for (const element of students) {
   // display the values
+  console.log(element);
+}
+for (const element in students) {
+  // display the index
   console.log(element);
 }
 
