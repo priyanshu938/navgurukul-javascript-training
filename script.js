@@ -16,3 +16,19 @@ if (c > d) {
 } else {
   console.log("c is less than d");
 }
+
+//switch case
+let day = 2;
+switch (day) {
+  case 1:
+    console.log("Monday");
+    break;
+  case 2:
+    console.log("Tuesday");
+    break;
+  default:
+    console.log("Sunday");
+    break;
+}
+
+// execution of more than case in absence of break keyword is called fall through
