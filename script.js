@@ -43,3 +43,22 @@ for (let i = 0; i < 10; i++) {
 console.log("outside loop");
 
 // return
+
+// for arrays and string iteration => for...of loops
+const students = ["John", "Sara", "Jack"];
+for (let element of students) {
+  // display the values
+  console.log(element);
+}
+
+// for objects iteration => for...in loops
+const person = {
+  fname: "John",
+  lname: "Doe",
+  age: 25,
+};
+
+for (let x in person) {
+  console.log(x); //prints key-properties
+  console.log(person[x]); //prints key-values
+}
