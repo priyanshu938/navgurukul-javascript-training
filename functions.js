@@ -51,3 +51,10 @@ function sumParent(a, b) {
 }
 
 console.log(sumParent(2, 3));
+
+/*
+First Class Functions/Citizens => 
+functions in js are called as first class citizens because they have the ability to be stored in variables, 
+passed as parameters and arguments. 
+They can also be returned in the function. 
+*/
