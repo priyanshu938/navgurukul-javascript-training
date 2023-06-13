@@ -15,5 +15,5 @@ const outputMap = arr.map((x) => 2 * x);
 console.log(outputMap);
 
 //filter method
-const outputFilter = arr.filter((x) => x % 2 === 0);
+const outputFilter = arr.filter((x) => x % 2 === 0); //for even number
 console.log(outputFilter);
