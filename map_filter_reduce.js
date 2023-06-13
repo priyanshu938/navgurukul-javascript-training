@@ -1,4 +1,4 @@
-const arr = [5, 1, 3, 2, 6];
+const arr = [5, 1, 30, 2, 6, 21, 18];
 
 //double the values
 const doubleValues = (arr) => {
@@ -11,5 +11,9 @@ const doubleValues = (arr) => {
 console.log(doubleValues(arr));
 
 //map method
-const output = arr.map((x) => 2 * x);
-console.log(output);
+const outputMap = arr.map((x) => 2 * x);
+console.log(outputMap);
+
+//filter method
+const outputFilter = arr.filter((x) => x % 2 === 0);
+console.log(outputFilter);
