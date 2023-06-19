@@ -8,7 +8,7 @@ const box2 = document.getElementById("box-2");
 // box1.classList.toggle("round-border"); // if class is present then removes else adds
 // box2.classList.toggle("round-border");
 
-const container = document.getElementsByClassName("box");
+const container = document.querySelectorAll(".box");
 // console.log(container);
 for (let i = 0; i < container.length; i++) {
   container[i].classList.add("round-border");
