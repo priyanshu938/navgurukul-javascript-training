@@ -1,0 +1,23 @@
+.container {
+  background-color: orange;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 450px;
+  padding: 10px;
+  gap: 10px;
+}
+.box {
+  width: 100px;
+  height: 100px;
+  background-color: blue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.round-border {
+  border-radius: 50%;
+  border: 2px solid black;
+}
