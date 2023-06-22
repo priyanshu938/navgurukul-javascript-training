@@ -1,6 +1,6 @@
 const drumsParent = document.getElementById("drumsParent");
 
-arrayOfDrums.addEventListener("click", (e) => {
+drumsParent.addEventListener("click", (e) => {
   let target = e.target.innerHTML;
   createSound(target);
   buttonAnimation(target);
