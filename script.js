@@ -1,57 +1,32 @@
-let arrayOfDrums = document.querySelectorAll(".drum");
+const drumsParent = document.getElementById("drumsParent");
 
-for (let i = 0; i < arrayOfDrums.length; i++) {
-  arrayOfDrums[i].addEventListener("click", function () {
-    let buttonInnerHTML = this.innerHTML;
-    makeSound(buttonInnerHTML);
-    buttonAnimation(buttonInnerHTML);
-  });
-  arrayOfDrums[i].addEventListener("keydown", function (event) {
-    makeSound(event.key);
-    buttonAnimation(event.key);
-  });
-}
+arrayOfDrums.addEventListener("click", (e) => {
+  let target = e.target.innerHTML;
+  createSound(target);
+  buttonAnimation(target);
+});
 
-const makeSound = (key) => {
-  switch (key) {
-    case "w":
-      let tom1 = new Audio("sounds/tom-1.mp3");
-      tom1.play();
-      break;
-    case "a":
-      let tom2 = new Audio("sounds/tom-2.mp3");
-      tom2.play();
-      break;
-    case "s":
-      let tom3 = new Audio("sounds/tom-3.mp3");
-      tom3.play();
-      break;
-    case "d":
-      let tom4 = new Audio("sounds/tom-4.mp3");
-      tom4.play();
-      break;
-    case "j":
-      let snare = new Audio("sounds/snare.mp3");
-      snare.play();
-      break;
-    case "k":
-      let crash = new Audio("sounds/crash.mp3");
-      crash.play();
-      break;
-    case "l":
-      let kick = new Audio("sounds/kick-bass.mp3");
-      kick.play();
-      break;
-    default:
-      alert("Wrong key pressed");
+drumsParent.addEventListener("keydown", (e) => {
+  let target = e.key;
+  let array = ["w", "a", "d", "j", "k", "l", "s"];
+  if (array.includes(target) === false) {
+    alert("Wrong Key Press");
+    return;
   }
+  createSound(target);
+  buttonAnimation(target);
+});
+
+const createSound = (key) => {
+  let sound = new Audio(`sounds/${key}.mp3`);
+  sound.play();
 };
 
 const buttonAnimation = (key) => {
-  let activeButton = document.querySelector(`.${key}`);
-  activeButton.classList.add("pressed");
+  let active = document.querySelector(`.${key}`);
+  active.classList.add("pressed");
 
   setTimeout(() => {
-    activeButton.classList.remove("pressed");
+    active.classList.remove("pressed");
   }, 100);
 };
