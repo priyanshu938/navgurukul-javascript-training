@@ -2,14 +2,14 @@ const drumsParent = document.getElementById("drumsParent");
 
 drumsParent.addEventListener("click", (e) => {
   let target = e.target.innerHTML;
-  createSound(target);
-  buttonAnimation(target);
+  createSound(target); // for creating sound
+  buttonAnimation(target); // for animating drums
 });
 
 drumsParent.addEventListener("keydown", (e) => {
   let target = e.key;
-  let array = ["w", "a", "d", "j", "k", "l", "s"];
-  if (array.includes(target) === false) {
+  let array = ["w", "a", "d", "j", "k", "l", "s"]; //if key pressed is apart from this array then alert will be shown
+  if (!array.includes(target)) {
     alert("Wrong Key Press");
     return;
   }
@@ -18,7 +18,7 @@ drumsParent.addEventListener("keydown", (e) => {
 });
 
 const createSound = (key) => {
-  let sound = new Audio(`sounds/${key}.mp3`);
+  let sound = new Audio(`sounds/${key}.mp3`); //dynamically updating the sound
   sound.play();
 };
 
