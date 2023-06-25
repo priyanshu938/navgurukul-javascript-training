@@ -27,17 +27,17 @@ buttons.addEventListener("click", (event) => {
 });
 
 //we are adding key events to whole body
-//keypress event tracks only main keys excluding shift,alt,ctrl,etc
-//keydown event tracks all keys including shift,alt,ctrl,etc
+/*The keypress ignores keys such as delete, arrows, page up, page down, home, end, ctrl, alt, shift, esc, etc.*/
+
 document.body.addEventListener("keypress", (event) => {
   let target = event.key; //key pressed
   const numbersArray = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
   const operatorsArray = ["+", "-", "*", "/"];
   if (target === "c") {
     display.value = "";
-  } else if (numbersArray.includes(event.key)) {
+  } else if (numbersArray.includes(target)) {
     display.value += target;
-  } else if (operatorsArray.includes(event.key)) {
+  } else if (operatorsArray.includes(target)) {
     let lastChar = display.value[display.value.length - 1]; //last character of string
     if (operatorsArray.includes(lastChar)) {
       display.value = display.value.slice(0, -1) + target; //eliminates repeated operators
