@@ -82,4 +82,5 @@ button.operator {
   border-radius: 3px;
   padding: 10px;
   font-size: large;
+  outline: none;
 }
