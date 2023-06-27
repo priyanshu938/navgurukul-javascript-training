@@ -6,17 +6,11 @@
 5. Display user data
 */
 
-/*
-- Promise => A Promise is an object representing the eventual completion or failure of an asynchronous operation.
-- A promise object has two properties - state and result. You cannot access these two properties.
-- A JS promise object has three states : Pending, Fulfilled, Rejected.
-*/
 function register() {
   return new Promise((res, rej) => {
     setTimeout(() => {
       console.log("Register end");
       res();
-      //   rej("Error comes");
     }, 3000);
   });
 }
