@@ -10,7 +10,7 @@ function register() {
   return new Promise((res, rej) => {
     setTimeout(() => {
       console.log("Register end");
-      res();
+      res("Got registered");
     }, 3000);
   });
 }
@@ -20,6 +20,7 @@ function sendEmail() {
     setTimeout(() => {
       console.log("Email end");
       res();
+      //   rej("Error from send email");
     }, 1000);
   });
 }
@@ -43,14 +44,24 @@ function getUserData() {
 }
 
 function displayUserData() {
-  setTimeout(() => {
-    console.log("User data displayed");
-  }, 1000);
+  return new Promise((res, rej) => {
+    setTimeout(() => {
+      console.log("User data displayed");
+      res();
+    }, 3000);
+  });
 }
 
-register()
-  .then(sendEmail)
-  .then(login)
-  .then(getUserData)
-  .then(displayUserData)
-  .catch((err) => console.log(err));
+async function authenticate() {
+  try {
+    let response = await register();
+    console.log(response);
+    await sendEmail();
+    await login();
+    await getUserData();
+    await displayUserData();
+  } catch (error) {
+    console.log(error);
+  }
+}
+authenticate();
